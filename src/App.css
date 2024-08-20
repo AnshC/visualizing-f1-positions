@@ -127,6 +127,15 @@
   color: white;
 }
 
+.main #self-link {
+  color: var(--f1-red);
+  text-underline-offset: 3px;
+}
+
+.main #self-link:hover {
+  color: var(--f1-red-active);
+}
+
 .main .data {
   height: 50vh;
   width: 100%;

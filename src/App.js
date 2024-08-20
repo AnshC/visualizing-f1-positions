@@ -171,7 +171,7 @@ function App() {
       <div className="App">
         <div className="main">
           <h1 className='header'>Visualizing F1 Positions.</h1>
-          <p>Visualize the change of positions of formula 1 drivers from the latest race.</p>
+          <p>Visualize the change of positions of formula 1 drivers from the latest race. By <a id="self-link" href="https://anshc.netlify.app">Ansh Chauhan.</a></p>
           <h2 className='race-header'><span style={{ color: "var(--f1-red)" }}>{raceData[0].year}</span> {raceData[0].meeting_name}</h2>
           <div className="data">
             <Chart
