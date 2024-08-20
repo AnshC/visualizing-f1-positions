@@ -1,0 +1,66 @@
+.driver {
+    display: flex;
+    width: 100%;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.driver:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    color: white;
+}
+
+.driver .text {
+    width: 50%;
+}
+
+.driver .text h2 {
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.driver .number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    margin-right: 10px;
+}
+
+.driver .number h2 {
+    font-family: "Formula1-Bold";
+    font-size: 2.3rem;
+}
+
+.driver .img img {
+    transform: translateY(20px) scale(1.3);
+}
+
+/* Responsive Styles */
+
+
+@media only screen and (max-width: 1220px) {
+    .driver .number h2 {
+        font-size: 1.8rem
+    }
+    .driver .text h2 {
+        font-size: 1rem;
+    }
+    .driver {
+        padding: 10px 20px 10px 20px;
+    }
+}
+
+@media only screen and (max-width: 1060px) {
+    .driver {
+        width: 300px;
+    }
+}
