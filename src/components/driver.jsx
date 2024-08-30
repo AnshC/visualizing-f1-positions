@@ -1,15 +1,11 @@
 import "./styles.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { MdOutlinePersonOff } from "react-icons/md";
 
 export default function Driver(props) {
   const [backgroundColor, setBackgroundColor] = useState("var(--f1-black)");
   const [teamTextColor, setTeamTextColor] = useState(`#${props.color}`);
-
-  useEffect(() => {
-    console.log(props.img_url);
-  }, []);
 
   return (
     <div
