@@ -127,12 +127,16 @@
   color: white;
 }
 
-.main #self-link {
+.main p.openf1 {
+  font-size: 10px;
+}
+
+.main .link {
   color: var(--f1-red);
   text-underline-offset: 3px;
 }
 
-.main #self-link:hover {
+.main .link:hover {
   color: var(--f1-red-active);
 }
 
