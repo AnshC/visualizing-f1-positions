@@ -1,9 +1,15 @@
 import "./styles.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import { MdOutlinePersonOff } from "react-icons/md";
 
 export default function Driver(props) {
   const [backgroundColor, setBackgroundColor] = useState("var(--f1-black)");
   const [teamTextColor, setTeamTextColor] = useState(`#${props.color}`);
+
+  useEffect(() => {
+    console.log(props.img_url);
+  }, []);
 
   return (
     <div
@@ -29,7 +35,11 @@ export default function Driver(props) {
         <p style={{ color: teamTextColor }}>{props.team}</p>
       </div>
       <div className="img">
-        <img src={props.img_url} alt={`${props.name} headshot`} />
+        {props.img_url === null ? (
+          <MdOutlinePersonOff id="broken-img" />
+        ) : (
+          <img src={props.img_url} alt={`${props.name} headshot`} />
+        )}
       </div>
     </div>
   );
