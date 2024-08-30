@@ -21,6 +21,7 @@ function App() {
 
   const [driverData, setDriverData] = useState([]);
   const [raceData, setRaceData] = useState([{year: "", meeting_name: ""}])
+  const [sessionData, setSessionData] = useState([{session_name: ""}])
   
   const [positionData, setPositionData] = useState([]);
   const [averagePos, setAveragePos] = useState("--");
@@ -82,6 +83,8 @@ function App() {
 
   // Initial Default Driver Data Fetching
   useEffect(()=>{
+
+    // Driver List Data Fetch
     axios.get("https://api.openf1.org/v1/drivers?session_key=latest")
     .then(response => {
       setDriverData(response.data)
@@ -91,14 +94,23 @@ function App() {
       setErr(true);
     })
 
+    // Race Information Data Fetch (year, meeting_name)
     axios.get("https://api.openf1.org/v1/meetings?meeting_key=latest")
     .then(response => {
       setRaceData(response.data);
+
+      // Default Load Up Driver Data
       writeData(1, "VER", "3671C6", "RB", "Max VERSTAPPEN")
     })
     .catch(error => {
       console.log(error)
       setErr(true);
+    })
+
+    // Session Information Data Fetch (session_name)
+    axios.get("https://api.openf1.org/v1/sessions?session_key=latest")
+    .then(response => {
+      setSessionData(response.data);
     })
 
   }, [])
@@ -156,6 +168,7 @@ function App() {
   }
 
   // Component Rendering
+  // error render
   if (err === true) {
     return (
       <div class="error">
@@ -173,7 +186,7 @@ function App() {
           <h1 className='header'>Visualizing F1 Positions.</h1>
           <p>Visualize the change of positions of formula 1 drivers from the latest race. By <a className="link" href="https://anshc.netlify.app">Ansh Chauhan.</a></p>
           <p className='openf1'>Data by <a href='https://openf1.org/' className='link'>OpenF1.</a></p>
-          <h2 className='race-header'><span style={{ color: "var(--f1-red)" }}>{raceData[0].year}</span> {raceData[0].meeting_name}</h2>
+          <h2 className='race-header'><span style={{ color: "var(--f1-red)" }}>{raceData[0].year}</span> {raceData[0].meeting_name} - {sessionData[0].session_name}</h2>
           <div className="data">
             <Chart
               chartType="LineChart"
