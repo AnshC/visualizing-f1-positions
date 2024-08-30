@@ -52,7 +52,7 @@ function App() {
       gridlines: {
         count: 0
       },
-      title: 'Time',
+      title: 'Time (s)',
       titleTextStyle: { color: "white",
         fontName: "Inter",
         fontSize: 20,
