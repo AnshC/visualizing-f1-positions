@@ -63,6 +63,10 @@
 
 /* Main Styling */
 
+.link {
+  text-decoration: none;
+}
+
 .App {
   display: flex;
   overflow-y: hidden;
@@ -106,8 +110,42 @@
 
 /* Handle on hover */
 
+.main .header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-.main h1.header {
+.main .header .right ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.main .header .right ul li {
+  color: var(--f1-red);
+  text-decoration: none;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--f1-red);
+  border-radius: 100px;
+  padding: 3px 10px 3px 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.main .header .right ul li:hover {
+  color: var(--f1-red-active);
+  border-color: var(--f1-red-active);
+}
+
+.main .header .right ul li .icon {
+  margin-right: 7px;
+}
+
+.main h1#header {
   color: var(--f1-red);
   font-weight: 900;
   font-size: 3rem;
@@ -324,5 +362,14 @@
   .main .driver-header-container .img img {
     margin: 20px 0 0 0;
     width: 80vw;
+  }
+
+  .main .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main .header .right {
+    margin-top: 15px;
   }
 }

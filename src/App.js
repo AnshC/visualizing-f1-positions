@@ -10,10 +10,11 @@ import { Chart } from 'react-google-charts';
 import { FaRegFaceDizzy } from "react-icons/fa6";
 import { TbReload } from "react-icons/tb";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-
-
+import { FaInfoCircle } from "react-icons/fa";
+import { FaLink } from "react-icons/fa";
 
 import Driver from './components/driver';
+import { Link } from 'react-router-dom';
 
 export function reloadPage() {
   window.location.reload();
@@ -196,10 +197,20 @@ function App() {
     return (
       <div className="App">
         <div className="main">
-          <h1 className='header'>Visualizing F1 Positions.</h1>
+          <div className="header">
+          <div className="left">
+          <h1 id='header'>Visualizing F1 Positions.</h1>
           <p>Visualize the change of positions of formula 1 drivers from the latest race. By <a className="link" href="https://anshc.netlify.app">Ansh Chauhan.</a></p>
           <p className='openf1'>Data by <a href='https://openf1.org/' className='link'>OpenF1.</a></p>
           <h2 className='race-header'><span style={{ color: "var(--f1-red)" }}>{raceData[0].year}</span> {raceData[0].meeting_name} - <span style={{ color: "var(--f1-red)" }}>{sessionData[0].session_name}</span></h2>
+          </div>
+          <div className="right">
+            <ul>
+              <Link to="/about" className='link'><li><FaInfoCircle className='icon'/>About</li></Link>
+              <span onClick={()=>{navigator.clipboard.writeText("https://f1positions.netlify.app")}}><li><FaLink className='icon'/>Copy</li></span>
+            </ul>
+          </div>
+          </div>
           <div className="data">
             { loading === true ? <div className="loading">
               <h1><AiOutlineLoading3Quarters className='icon'/>LOADING...</h1>
