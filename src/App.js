@@ -183,7 +183,7 @@ function App() {
   // error render
   if (err === true) {
     return (
-      <div class="error">
+      <div className="error">
         <FaRegFaceDizzy id="icon"/>
         <h1>Error Fetching Data from Source.</h1>
         <h2>Try reloading the page.</h2>
@@ -201,7 +201,7 @@ function App() {
           <p className='openf1'>Data by <a href='https://openf1.org/' className='link'>OpenF1.</a></p>
           <h2 className='race-header'><span style={{ color: "var(--f1-red)" }}>{raceData[0].year}</span> {raceData[0].meeting_name} - <span style={{ color: "var(--f1-red)" }}>{sessionData[0].session_name}</span></h2>
           <div className="data">
-            { loading === true ? <div class="loading">
+            { loading === true ? <div className="loading">
               <h1><AiOutlineLoading3Quarters className='icon'/>LOADING...</h1>
             </div> : 
             <Chart
@@ -213,12 +213,12 @@ function App() {
             /> }
           </div>
           <div className="driver-data">
-              <div class="driver-header-container">
+              <div className="driver-header-container">
               <div>
               <h2 className='driver-header'><span style={{ color: `#${currentDriver.color}` }}>{currentDriver.number}</span> {currentDriver.name}</h2>
               <p className="driver-header-team" style={{ color: `#${currentDriver.color}` }}>{currentDriver.team}</p>
               </div>
-              <div class="img">
+              <div className="img">
                 <img src={`/img/cars/${currentDriver.team}.png`} alt={`${currentDriver.team} Formula 1 Car`}/>
               </div>
               </div>
@@ -245,7 +245,7 @@ function App() {
         <div className="navigation">
           <div className="drivers-list">
             {driverData.map((d)=>{
-              return <span key={d.driver_number} onClick={()=>{writeData(d.driver_number, d.name_acronym, d.team_colour, d.team_name, d.full_name)}}><Driver name={d.full_name} img_url={d.headshot_url} name_acr={d.name_acronym} team={d.team_name} color={d.team_colour} number={d.driver_number} /></span>
+              return <span key={d.driver_number} onClick={()=>{writeData(d.driver_number, d.name_acronym, d.team_colour, d.team_name, d.full_name); window.scrollTo(0,0)}}><Driver name={d.full_name} img_url={d.headshot_url} name_acr={d.name_acronym} team={d.team_name} color={d.team_colour} number={d.driver_number} /></span>
             })}
           </div>
         </div>
