@@ -4,9 +4,13 @@ import { DateISOtoNumber } from './functions/date';
 import { useEffect, useState } from 'react';
 
 import axios from 'axios';
+
 import { Chart } from 'react-google-charts';
+
 import { FaRegFaceDizzy } from "react-icons/fa6";
 import { TbReload } from "react-icons/tb";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
 
 
 import Driver from './components/driver';
@@ -18,6 +22,7 @@ export function reloadPage() {
 
 function App() {
   const [err, setErr] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const [driverData, setDriverData] = useState([]);
   const [raceData, setRaceData] = useState([{year: "", meeting_name: ""}])
@@ -84,6 +89,7 @@ function App() {
   // Initial Default Driver Data Fetching
   useEffect(()=>{
 
+    setLoading(true);
     // Driver List Data Fetch
     axios.get("https://api.openf1.org/v1/drivers?session_key=latest")
     .then(response => {
@@ -94,6 +100,7 @@ function App() {
       setErr(true);
     })
 
+    setLoading(true);
     // Race Information Data Fetch (year, meeting_name)
     axios.get("https://api.openf1.org/v1/meetings?meeting_key=latest")
     .then(response => {
@@ -107,16 +114,19 @@ function App() {
       setErr(true);
     })
 
+    setLoading(true);
     // Session Information Data Fetch (session_name)
     axios.get("https://api.openf1.org/v1/sessions?session_key=latest")
     .then(response => {
       setSessionData(response.data);
     })
 
+    setLoading(false);
   }, [])
 
   // Fetches Data and Parses Data to react useState objects 
   function writeData(driverNumber, nameAcr, driverColor, driverTeam, driverFullName) {
+    setLoading(true);
     // Setting Chart Columns
     const mainArray = [["Time", nameAcr]];
 
@@ -159,6 +169,7 @@ function App() {
         name: driverFullName
       }
       setCurrentDriver(currentDriverObject);
+      setLoading(false);
     })
     .catch(error => {
       console.log(error)
@@ -179,7 +190,8 @@ function App() {
         <p>Visualizing F1 Postions by <a href="https://anshc.netlify.app">Ansh Chauhan</a></p>
       </div>
     )
-  } else {
+  }
+   else {
     return (
       <div className="App">
         <div className="main">
@@ -188,13 +200,16 @@ function App() {
           <p className='openf1'>Data by <a href='https://openf1.org/' className='link'>OpenF1.</a></p>
           <h2 className='race-header'><span style={{ color: "var(--f1-red)" }}>{raceData[0].year}</span> {raceData[0].meeting_name} - {sessionData[0].session_name}</h2>
           <div className="data">
+            { loading === true ? <div class="loading">
+              <h1><AiOutlineLoading3Quarters className='icon'/>LOADING...</h1>
+            </div> : 
             <Chart
               chartType="LineChart"
               width="100%"
               height="100%"
               data={positionData}
               options={options}
-            />
+            /> }
           </div>
           <div className="driver-data">
               <h2 className='driver-header'><span style={{ color: `#${currentDriver.color}` }}>{currentDriver.number}</span> {currentDriver.name}</h2>
