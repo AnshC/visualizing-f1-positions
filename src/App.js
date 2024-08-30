@@ -52,6 +52,7 @@ function App() {
     },
     curveType: "",
     legend: { position: "bottom" },
+    lineWidth: 4,
     backgroundColor: "#010000",
     hAxis: {
       gridlines: {
