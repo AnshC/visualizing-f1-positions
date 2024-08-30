@@ -36,7 +36,7 @@ function App() {
   const [currentDriver, setCurrentDriver] = useState({
     nameAcr: "VER",
     color: "3671C6",
-    team: "RB",
+    team: "Redbull Racing",
     number: 1,
     name: "Max VERSTAPPEN"
   });
@@ -108,7 +108,7 @@ function App() {
       setRaceData(response.data);
 
       // Default Load Up Driver Data
-      writeData(1, "VER", "3671C6", "RB", "Max VERSTAPPEN")
+      writeData(1, "VER", "3671C6", "Redbull Racing", "Max VERSTAPPEN")
     })
     .catch(error => {
       console.log(error)
