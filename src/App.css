@@ -253,7 +253,7 @@
     height: max-content;
   }
   .main {
-    padding: 20px;
+    padding: 35px;
     width: 100vw;
     min-height: 100vh;
     background-color: var(--f1-black);
