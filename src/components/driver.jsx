@@ -29,7 +29,7 @@ export default function Driver(props) {
         <p style={{ color: teamTextColor }}>{props.team}</p>
       </div>
       <div className="img">
-        <img src={props.img_url} alt="" />
+        <img src={props.img_url} alt={`${props.name} headshot`} />
       </div>
     </div>
   );
