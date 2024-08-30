@@ -36,7 +36,7 @@ function App() {
   const [currentDriver, setCurrentDriver] = useState({
     nameAcr: "VER",
     color: "3671C6",
-    team: "Redbull Racing",
+    team: "Red Bull Racing",
     number: 1,
     name: "Max VERSTAPPEN"
   });
@@ -108,7 +108,7 @@ function App() {
       setRaceData(response.data);
 
       // Default Load Up Driver Data
-      writeData(1, "VER", "3671C6", "Redbull Racing", "Max VERSTAPPEN")
+      writeData(1, "VER", "3671C6", "Red Bull Racing", "Max VERSTAPPEN")
     })
     .catch(error => {
       console.log(error)
@@ -213,8 +213,15 @@ function App() {
             /> }
           </div>
           <div className="driver-data">
+              <div class="driver-header-container">
+              <div>
               <h2 className='driver-header'><span style={{ color: `#${currentDriver.color}` }}>{currentDriver.number}</span> {currentDriver.name}</h2>
               <p className="driver-header-team" style={{ color: `#${currentDriver.color}` }}>{currentDriver.team}</p>
+              </div>
+              <div class="img">
+                <img src={`/img/cars/${currentDriver.team}.png`} alt={`${currentDriver.team} Formula 1 Car`}/>
+              </div>
+              </div>
               <div className="main-data">
                 <div className="container">
                   <h2>Average Position</h2>
