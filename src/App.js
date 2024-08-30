@@ -198,7 +198,7 @@ function App() {
           <h1 className='header'>Visualizing F1 Positions.</h1>
           <p>Visualize the change of positions of formula 1 drivers from the latest race. By <a className="link" href="https://anshc.netlify.app">Ansh Chauhan.</a></p>
           <p className='openf1'>Data by <a href='https://openf1.org/' className='link'>OpenF1.</a></p>
-          <h2 className='race-header'><span style={{ color: "var(--f1-red)" }}>{raceData[0].year}</span> {raceData[0].meeting_name} - {sessionData[0].session_name}</h2>
+          <h2 className='race-header'><span style={{ color: "var(--f1-red)" }}>{raceData[0].year}</span> {raceData[0].meeting_name} - <span style={{ color: "var(--f1-red)" }}>{sessionData[0].session_name}</span></h2>
           <div className="data">
             { loading === true ? <div class="loading">
               <h1><AiOutlineLoading3Quarters className='icon'/>LOADING...</h1>
