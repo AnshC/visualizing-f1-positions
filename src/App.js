@@ -24,6 +24,7 @@ export function reloadPage() {
 function App() {
   const [err, setErr] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [isCopied, setIsCopied] = useState("Copy");
 
   const [driverData, setDriverData] = useState([]);
   const [raceData, setRaceData] = useState([{year: "", meeting_name: ""}])
@@ -207,7 +208,7 @@ function App() {
           <div className="right">
             <ul>
               <Link to="/about" className='link'><li><FaInfoCircle className='icon'/>About</li></Link>
-              <span onClick={()=>{navigator.clipboard.writeText("https://f1positions.netlify.app")}}><li><FaLink className='icon'/>Copy</li></span>
+              <span onClick={()=>{navigator.clipboard.writeText("https://f1positions.netlify.app"); setIsCopied("Copied!")}}><li><FaLink className='icon'/>{isCopied}</li></span>
             </ul>
           </div>
           </div>
