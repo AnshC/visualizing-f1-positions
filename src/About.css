@@ -1,0 +1,134 @@
+/* About Page Styles */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--f1-black); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--f1-red); 
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--f1-red-active); 
+}
+
+.about a {
+  color: var(--f1-red);
+}
+
+.about a:hover {
+  color: var(--f1-red-active);
+}
+
+.about {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--f1-black);
+    padding: 5vh 10vw 5vh 10vw;
+    overflow-x: hidden;
+  }
+
+  .about .indent {
+    margin-left: 20px;
+  }
+  
+  .about p, .about h3, .about h1 {
+    color: white;
+  }
+
+  .about .nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .about .nav ul {
+    margin-top: 10px;
+    display: flex;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 20px;
+  }
+
+  .about .nav ul li {
+    color: var(--f1-red);
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--f1-red);
+    border-radius: 100px;
+    padding: 3px 10px 3px 10px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .about .nav ul li:hover {
+    color: var(--f1-red-active);
+    border-color: var(--f1-red-active);
+  }
+
+  .about .nav .link {
+    text-decoration: none;
+  }
+
+  .about .nav .icon {
+    margin-right: 7px;
+  }
+  
+  .about h1.main, .about h1.main span {
+    font-family: "Formula1-Bold", sans-serif;
+  }
+
+ .about h2 {
+    margin: 20px 0 10px 0;
+    text-transform: uppercase;
+  }
+
+  .about h3 {
+    margin-top: 10px;
+  }
+
+  .about .colors {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 750px;
+    margin-bottom: 20px;
+  }
+
+  .about .color {
+    width: 150px;
+    height: 50px;
+    color: var(--f1-black);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+  }
+
+  .about .colors-container h3 {
+    margin-bottom: 10px;
+  }
+
+  .about .cars {
+    display: flex;
+    overflow-x: scroll;
+    max-width: 40vw;
+  }
+
+  .about .cars img {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 30vw;
+    margin-right: 20px;
+  }
+
+  .about .cars::-webkit-scrollbar {
+    height: 7px;
+  }
