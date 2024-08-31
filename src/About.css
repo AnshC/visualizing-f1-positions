@@ -132,3 +132,7 @@
   .about .cars::-webkit-scrollbar {
     height: 7px;
   }
+
+  .about #credit {
+    margin-top: 30px;
+  }

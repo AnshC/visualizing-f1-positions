@@ -172,6 +172,12 @@ export default function About() {
         <img src="/img/cars/Williams.png" alt="Williams 2024 F1 Car" />
         <img src="/img/cars/Kick Sauber.png" alt="Kick Sauber 2024 F1 Car" />
       </div>
+      <p className="f1-text" id="credit">
+        Website Developed & Designed by{" "}
+        <a href="https://anshc.netlify.app" className="f1-text">
+          Ansh Chauhan
+        </a>
+      </p>
     </div>
   );
 }
