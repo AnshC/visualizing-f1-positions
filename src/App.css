@@ -69,7 +69,7 @@
   height: 100vh;
 }
 
-.main {
+.App .main {
   padding: 50px;
   width: 75vw;
   height: 100%;
@@ -106,20 +106,20 @@
 
 /* Handle on hover */
 
-.main .header {
+.App .main .header {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.main .header .right ul {
+.App .main .header .right ul {
   display: flex;
   align-items: center;
   list-style: none;
 }
 
-.main .header .right ul li {
+.App .main .header .right ul li {
   color: var(--f1-red);
   text-decoration: none;
   margin-right: 20px;
@@ -132,54 +132,54 @@
   cursor: pointer;
 }
 
-.main .header .right .link {
+.App .main .header .right .link {
   text-decoration: none;
 }
 
-.main .header .right ul li:hover {
+.App .main .header .right ul li:hover {
   color: var(--f1-red-active);
   border-color: var(--f1-red-active);
 }
 
-.main .header .right ul li .icon {
+.App .main .header .right ul li .icon {
   margin-right: 7px;
 }
 
-.main h1#header {
+.App .main h1#header {
   color: var(--f1-red);
   font-weight: 900;
   font-size: 3rem;
   font-family: "Formula1-Bold";
 }
 
-.main h2.race-header {
+.App .main h2.race-header {
   margin-top: 20px;
   font-family: 'Formula1-Bold';
 }
 
-.main h2.race-header span{
+.App .main h2.race-header span{
   font-family: inherit;
 }
 
-.main p {
+.App .main p {
   color: white;
 }
 
-.main p.openf1 {
+.App .main p.openf1 {
   font-size: 10px;
 }
 
-.main .link {
+.App .main .link {
   text-decoration: underline;
   color: var(--f1-red);
   text-underline-offset: 3px;
 }
 
-.main .link:hover {
+.App .main .link:hover {
   color: var(--f1-red-active);
 }
 
-.main .data {
+.App .main .data {
   height: 50vh;
   width: 100%;
   display: flex;
@@ -187,37 +187,37 @@
   transform: translateX(-50px);
 }
 
-.main .driver-data{
+.App .main .driver-data{
   margin-top: 50px;
   width: 100%;
 }
 
-.main .driver-header-container {
+.App .main .driver-header-container {
   display: flex;
 }
 
-.main .driver-header-container .img img {
+.App .main .driver-header-container .img img {
   margin-left: 50px;
   width: 300px;
 }
 
-.main .driver-data h2.driver-header {
+.App .main .driver-data h2.driver-header {
   font-family: "Formula1-Bold";
   font-size: 2.3rem;
   text-align: right;
 }
 
-.main .driver-data h2 span {
+.App .main .driver-data h2 span {
   font-family: inherit;
 }
 
-.main .driver-data .driver-header-team {
+.App .main .driver-data .driver-header-team {
   font-weight: 800;
   font-size: 1.3rem;
   text-align: right;
 }
 
-.main .driver-data .main-data {
+.App .main .driver-data .main-data {
   margin-top: 25px;
   width: 100%;
   display: flex;
@@ -226,7 +226,7 @@
   flex-wrap: wrap;
 }
 
-.main .driver-data .main-data .container {
+.App .main .driver-data .main-data .container {
   min-width: min-content;
   width: 20%;
   margin: 10px;
@@ -236,11 +236,11 @@
   align-items: center;
 }
 
-.main .driver-data .main-data .container .number {
+.App .main .driver-data .main-data .container .number {
   font-size: 3.0rem;
 }
 
-.main .driver-data .main-data .container *{
+.App .main .driver-data .main-data .container *{
   font-family: "Formula1-Bold";
   text-align: center;
 }
@@ -278,20 +278,20 @@
 /* Responsive Styles */
 
 @media only screen and (max-height: 860px) {
-  .main h1.header {
+  .App .main h1.header {
     font-size: 2rem;
   }
-  .main .driver-data h2.driver-header {
+  .App .main .driver-data h2.driver-header {
     font-size: 1.8rem;
   }
-  .main .driver-data .driver-header-team {
+  .App .main .driver-data .driver-header-team {
     font-size: 1rem;
   }
-  .main .driver-data .main-data .container .number {
+  .App .main .driver-data .main-data .container .number {
     font-size: 2rem;
   }
 
-  .main .driver-data .main-data {
+  .App .main .driver-data .main-data {
     margin-top: 20px;
   }
 }
@@ -303,14 +303,14 @@
     flex-direction: column;
     height: max-content;
   }
-  .main {
+  .App .main {
     padding: 35px;
     width: 100vw;
     min-height: 100vh;
     background-color: var(--f1-black);
   }
 
-  .main .data {
+  .App .main .data {
     width: 100vw;
     height: 65vh;
     display: flex;
@@ -340,42 +340,42 @@
 
 
 @media only screen and (max-width: 700px) {
-  .main .driver-data .main-data .container .number {
+  .App .main .driver-data .main-data .container .number {
     font-size: 1.5rem;
   }
 
-  .main .driver-data .main-data .container h2{
+  .App .main .driver-data .main-data .container h2{
     font-size: 1.3rem;
   }
 
-  .main .driver-data .main-data {
+  .App .main .driver-data .main-data {
     margin-top: 20px;
   }
 
-  .main .driver-header-container {
+  .App .main .driver-header-container {
     flex-direction: column;
     align-items: center;
   }
 
-  .main .driver-data .driver-header-team {
+  .App .main .driver-data .driver-header-team {
     text-align: center;
   }
 
-  .main .driver-data h2.driver-header {
+  .App .main .driver-data h2.driver-header {
     text-align: center;
   }
 
-  .main .driver-header-container .img img {
+  .App .main .driver-header-container .img img {
     margin: 20px 0 0 0;
     width: 80vw;
   }
 
-  .main .header {
+  .App .main .header {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .main .header .right {
+  .App .main .header .right {
     margin-top: 15px;
   }
 }
