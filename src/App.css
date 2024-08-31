@@ -184,6 +184,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  transform: translateX(-50px);
 }
 
 .main .driver-data{
@@ -312,6 +313,10 @@
   .main .data {
     width: 100vw;
     height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-25px);
   }
   
   .navigation {
