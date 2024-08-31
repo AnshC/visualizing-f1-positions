@@ -170,6 +170,7 @@
 }
 
 .main .link {
+  text-decoration: underline;
   color: var(--f1-red);
   text-underline-offset: 3px;
 }
