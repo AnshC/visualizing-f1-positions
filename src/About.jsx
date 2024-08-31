@@ -37,7 +37,7 @@ export default function About() {
       <h2 className="f1-text red">Data</h2>
       <p>
         All of the data, including the drivers' names, teams, race information,
-        and datapoints are all pulled from{" "}
+        and data points are all pulled from{" "}
         <a href="https://openf1.org/">OpenF1.</a> This application is solely
         dependent on the OpenF1 API. Any issues with an API request will lead to
         an error displayed on the website.
