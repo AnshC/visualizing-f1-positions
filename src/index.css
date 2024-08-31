@@ -19,3 +19,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.f1-text {
+  font-family: "Formula1-Bold";
+}
+
+.red {
+  color: var(--f1-red) !important;
+}
