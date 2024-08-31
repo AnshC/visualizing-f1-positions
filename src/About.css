@@ -136,3 +136,45 @@
   .about #credit {
     margin-top: 30px;
   }
+
+  /* Responsive Styling */
+
+  @media only screen and (max-width: 1000px) {
+    .about .cars img {
+      width: 50vw;
+    }
+    .about .cars {
+      max-width: 80vw;
+    }
+  }
+
+  @media only screen and (max-width: 430px) {
+    .about .nav ul li {
+      font-size: smaller;
+    }
+    .about .color {
+      width: 100px;
+    }
+    .about .cars img {
+      width: 150vw;
+    }
+
+    .about .cars::-webkit-scrollbar {
+      height: 7px;
+    }
+
+    .about .indent {
+      margin-left: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 380px) {
+    .about .nav ul {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .about .nav ul li {
+      margin-top: 10px;
+    }
+  }
