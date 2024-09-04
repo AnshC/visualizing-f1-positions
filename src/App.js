@@ -163,6 +163,13 @@ function App() {
       setPosChange(positionArray[0]-positionArray[positionArray.length-1]);
       setFinalPos(positionArray[positionArray.length-1]);
 
+      // Null Color, Null Team handling 
+      if (driverColor === null) {
+        driverColor ="FFFFFF";
+      } if (driverTeam === null) {
+        driverTeam = "null"
+      }
+
       // Creating Current Driver Object
       const currentDriverObject = {
         nameAcr: nameAcr,
@@ -228,7 +235,7 @@ function App() {
               <div className="driver-header-container">
               <div>
               <h2 className='driver-header'><span style={{ color: `#${currentDriver.color}` }}>{currentDriver.number}</span> {currentDriver.name}</h2>
-              <p className="driver-header-team" style={{ color: `#${currentDriver.color}` }}>{currentDriver.team}</p>
+              <p className="driver-header-team" style={{ color: `#${currentDriver.color}` }}>{currentDriver.team === "null" ? "N/A" : currentDriver.team}</p>
               </div>
               <div className="img">
                 <img src={`/img/cars/${currentDriver.team}.png`} alt={`${currentDriver.team} Formula 1 Car`}/>
