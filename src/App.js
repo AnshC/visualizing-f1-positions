@@ -27,8 +27,9 @@ function App() {
   const [isCopied, setIsCopied] = useState("Copy");
 
   const [driverData, setDriverData] = useState([]);
-  const [raceData, setRaceData] = useState([{year: "", meeting_name: ""}])
-  const [sessionData, setSessionData] = useState([{session_name: ""}])
+  const [raceData, setRaceData] = useState([{year: "Loading", meeting_name: ""}])
+  const [sessionData, setSessionData] = useState([{session_name: "Data..."}])
+  const [timeStart, setTimeStart]= useState("");
   
   const [positionData, setPositionData] = useState([]);
   const [averagePos, setAveragePos] = useState("--");
@@ -97,18 +98,16 @@ function App() {
     axios.get("https://api.openf1.org/v1/drivers?session_key=latest")
     .then(response => {
       setDriverData(response.data)
-    })
-    .catch(error => {
-      console.log(error)
-      setErr(true);
-    })
-
-    setLoading(true);
+    // Session Information Data Fetch (session_name)
+    axios.get("https://api.openf1.org/v1/sessions?session_key=latest")
+    .then(response => {
+      setSessionData(response.data);
+      setTimeStart(response.data[0].date_start);
+      
     // Race Information Data Fetch (year, meeting_name)
     axios.get("https://api.openf1.org/v1/meetings?meeting_key=latest")
     .then(response => {
       setRaceData(response.data);
-
       // Default Load Up Driver Data
       writeData(1, "VER", "3671C6", "Red Bull Racing", "Max VERSTAPPEN")
     })
@@ -116,19 +115,18 @@ function App() {
       console.log(error)
       setErr(true);
     })
-
-    setLoading(true);
-    // Session Information Data Fetch (session_name)
-    axios.get("https://api.openf1.org/v1/sessions?session_key=latest")
-    .then(response => {
-      setSessionData(response.data);
+    })
+    })
+    .catch(error => {
+      console.log(error)
+      setErr(true);
     })
 
-    setLoading(false);
-  }, [])
+  }, [timeStart])
 
   // Fetches Data and Parses Data to react useState objects 
   function writeData(driverNumber, nameAcr, driverColor, driverTeam, driverFullName) {
+
     setLoading(true);
     // Setting Chart Columns
     const mainArray = [["Time", nameAcr]];
@@ -138,16 +136,23 @@ function App() {
     .then(response => {
       const data = response.data;
       const positionArray = []
+
+      const defaultArray = [0, data[0].position];
+      mainArray.push(defaultArray);
+      positionArray.push(data[0].position)
+
       data.forEach(dataPoint => {
         
-        // Pushing Position Data to Position Array
+        if (DateISOtoNumber(dataPoint.date).value >= DateISOtoNumber(timeStart).value){
+          // Pushing Position Data to Position Array
         positionArray.push(dataPoint.position);
         
         // Pushing data points to chart array
-        var array = [DateISOtoNumber(dataPoint.date).value, dataPoint.position];
+        var array = [DateISOtoNumber(dataPoint.date).value - DateISOtoNumber(timeStart).value, dataPoint.position];
         mainArray.push(array);
         
         setPositionData(mainArray);
+        }
       });
 
       // Calculating Average position using position array
@@ -179,12 +184,13 @@ function App() {
         name: driverFullName
       }
       setCurrentDriver(currentDriverObject);
-      setLoading(false);
     })
     .catch(error => {
       console.log(error)
       setErr(true);
     })
+
+    setLoading(false);
     
   }
 
