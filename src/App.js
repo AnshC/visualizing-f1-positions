@@ -137,6 +137,7 @@ function App() {
       const data = response.data;
       const positionArray = []
 
+      // Pushing intial position at time = 0 seconds
       const defaultArray = [0, data[0].position];
       mainArray.push(defaultArray);
       positionArray.push(data[0].position)
@@ -184,13 +185,14 @@ function App() {
         name: driverFullName
       }
       setCurrentDriver(currentDriverObject);
+      setLoading(false);
     })
     .catch(error => {
       console.log(error)
       setErr(true);
     })
 
-    setLoading(false);
+    
     
   }
 
@@ -270,7 +272,7 @@ function App() {
         <div className="navigation">
           <div className="drivers-list">
             {driverData.map((d)=>{
-              return <span key={d.driver_number} onClick={()=>{writeData(d.driver_number, d.name_acronym, d.team_colour, d.team_name, d.full_name); window.scrollTo(0,0)}}><Driver name={d.full_name} img_url={d.headshot_url} name_acr={d.name_acronym} team={d.team_name} color={d.team_colour} number={d.driver_number} /></span>
+              return <span key={d.driver_number} onClick={()=>{writeData(d.driver_number, d.name_acronym, d.team_colour, d.team_name, d.full_name); window.scrollTo(0,0); setLoading(true)}}><Driver name={d.full_name} img_url={d.headshot_url} name_acr={d.name_acronym} team={d.team_name} color={d.team_colour} number={d.driver_number} /></span>
             })}
           </div>
         </div>
