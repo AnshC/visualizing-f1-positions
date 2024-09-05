@@ -70,6 +70,9 @@ function App() {
        }
     },
     vAxis: {
+      viewWindow: {
+        min: 1
+      },
       title: 'Position',
       baseline: 1,
       titleTextStyle: {
@@ -81,7 +84,7 @@ function App() {
       },
       format: 'decimal',
       gridlines: {
-        count: 2,
+        count: 10,
         color: '#0f0f0f'
       },
       direction: -1,
