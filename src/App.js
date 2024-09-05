@@ -1,7 +1,7 @@
 import './App.css';
 import { DateISOtoNumber } from './functions/date';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import axios from 'axios';
 
@@ -53,7 +53,7 @@ function App() {
         }
       }
     },
-    curveType: "",
+    curveType: "function",
     legend: { position: "bottom" },
     lineWidth: 4,
     backgroundColor: "#010000",
@@ -71,6 +71,7 @@ function App() {
     },
     vAxis: {
       title: 'Position',
+      baseline: 1,
       titleTextStyle: {
         color: "white",
         fontName: "Inter",
@@ -108,8 +109,6 @@ function App() {
     axios.get("https://api.openf1.org/v1/meetings?meeting_key=latest")
     .then(response => {
       setRaceData(response.data);
-      // Default Load Up Driver Data
-      writeData(1, "VER", "3671C6", "Red Bull Racing", "Max VERSTAPPEN")
     })
     .catch(error => {
       console.log(error)
@@ -122,11 +121,11 @@ function App() {
       setErr(true);
     })
 
-  }, [timeStart])
+  }, [])
 
   // Fetches Data and Parses Data to react useState objects 
-  function writeData(driverNumber, nameAcr, driverColor, driverTeam, driverFullName) {
 
+  const writeData = useCallback((driverNumber, nameAcr, driverColor, driverTeam, driverFullName)=>{
     setLoading(true);
     // Setting Chart Columns
     const mainArray = [["Time", nameAcr]];
@@ -192,9 +191,12 @@ function App() {
       setErr(true);
     })
 
-    
-    
-  }
+  }, [timeStart])
+
+  // Default Load Up Driver Data
+  useEffect(()=>{
+    writeData(1, "VER", "3671C6", "Red Bull Racing", "Max VERSTAPPEN")
+  }, [writeData])
 
   // Component Rendering
   // error render
