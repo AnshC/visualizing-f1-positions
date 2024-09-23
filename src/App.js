@@ -30,6 +30,7 @@ function App() {
   const [raceData, setRaceData] = useState([{year: "Loading", meeting_name: ""}])
   const [sessionData, setSessionData] = useState([{session_name: "Data..."}])
   const [timeStart, setTimeStart]= useState("");
+  const [timeEnd, setTimeEnd] = useState("");
   
   const [positionData, setPositionData] = useState([]);
   const [averagePos, setAveragePos] = useState("--");
@@ -107,6 +108,7 @@ function App() {
     .then(response => {
       setSessionData(response.data);
       setTimeStart(response.data[0].date_start);
+      setTimeEnd(response.data[0].date_end);
       
     // Race Information Data Fetch (year, meeting_name)
     axios.get("https://api.openf1.org/v1/meetings?meeting_key=latest")
@@ -129,6 +131,7 @@ function App() {
   // Fetches Data and Parses Data to react useState objects 
 
   const writeData = useCallback((driverNumber, nameAcr, driverColor, driverTeam, driverFullName)=>{
+
     setLoading(true);
     // Setting Chart Columns
     const mainArray = [["Time", nameAcr]];
@@ -146,17 +149,25 @@ function App() {
 
       data.forEach(dataPoint => {
         
-        if (DateISOtoNumber(dataPoint.date).value >= DateISOtoNumber(timeStart).value){
+        if (DateISOtoNumber(dataPoint.date).value >= DateISOtoNumber(timeStart).value) {
+          
           // Pushing Position Data to Position Array
-        positionArray.push(dataPoint.position);
+          positionArray.push(dataPoint.position);
         
-        // Pushing data points to chart array
-        var array = [DateISOtoNumber(dataPoint.date).value - DateISOtoNumber(timeStart).value, dataPoint.position];
-        mainArray.push(array);
-        
-        setPositionData(mainArray);
-        }
+          // Pushing data points to chart array
+          var array = [DateISOtoNumber(dataPoint.date).value - DateISOtoNumber(timeStart).value, dataPoint.position];
+          mainArray.push(array);
+
+          setPositionData(mainArray);
+
+          }
+
       });
+
+      if (mainArray.length === 2) {
+        mainArray.push([DateISOtoNumber(timeEnd).value - DateISOtoNumber(timeStart).value, defaultArray[1]])
+        setPositionData(mainArray);
+      }
 
       // Calculating Average position using position array
 
@@ -194,7 +205,7 @@ function App() {
       setErr(true);
     })
 
-  }, [timeStart])
+  }, [timeStart, timeEnd])
 
   // Default Load Up Driver Data
   useEffect(()=>{
