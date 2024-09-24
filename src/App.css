@@ -166,6 +166,7 @@
 }
 
 .App .main p.openf1 {
+  margin-top: 5px;
   font-size: 10px;
 }
 
@@ -377,5 +378,27 @@
 
   .App .main .header .right {
     margin-top: 15px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  h1#header {
+    font-size: 2rem !important;
+    margin-bottom: 10px;
+  }
+  p.openf1 {
+    margin-top: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 1315px) {
+  h1#header {
+    text-wrap: nowrap;
+  }
+}
+
+@media only screen and (max-height: 1315px) {
+  .App .data {
+    height: 45vh !important;
   }
 }
