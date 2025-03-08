@@ -7,12 +7,24 @@
   text-align: center;
   flex-direction: column;
   background-color: var(--f1-black);
+  padding: 0 10vw 0 10vw;
+}
+
+.error span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error span h1 {
+  font-size: 40px;
+  color: white;
+  margin-left: 10px;
 }
 
 .error #icon {
   color: var(--f1-red);
   font-size: 50px;
-  margin-bottom: 20px;
 }
 
 .error .reload {
@@ -92,17 +104,17 @@
 
 /* Track */
 .navigation::-webkit-scrollbar-track {
-  background: var(--f1-black); 
+  background: var(--f1-black);
 }
- 
+
 /* Handle */
 .navigation::-webkit-scrollbar-thumb {
-  background: var(--f1-red); 
+  background: var(--f1-red);
   border-radius: 5px;
 }
 
 .navigation::-webkit-scrollbar-thumb:hover {
-  background: var(--f1-red-active); 
+  background: var(--f1-red-active);
 }
 
 /* Handle on hover */
@@ -155,10 +167,10 @@
 
 .App .main h2.race-header {
   margin-top: 20px;
-  font-family: 'Formula1-Bold';
+  font-family: "Formula1-Bold";
 }
 
-.App .main h2.race-header span{
+.App .main h2.race-header span {
   font-family: inherit;
 }
 
@@ -189,7 +201,7 @@
   transform: translateX(-50px);
 }
 
-.App .main .driver-data{
+.App .main .driver-data {
   margin-top: 50px;
   width: 100%;
 }
@@ -239,10 +251,10 @@
 }
 
 .App .main .driver-data .main-data .container .number {
-  font-size: 3.0rem;
+  font-size: 3rem;
 }
 
-.App .main .driver-data .main-data .container *{
+.App .main .driver-data .main-data .container * {
   font-family: "Formula1-Bold";
   text-align: center;
 }
@@ -260,7 +272,7 @@
   font-family: "Formula1-Bold", sans-serif;
   color: var(--f1-red);
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 .loading h1 .icon {
@@ -268,11 +280,12 @@
   animation: LoadingRing 1s infinite;
 }
 
-/* Loading Animation */ 
+/* Loading Animation */
 @keyframes LoadingRing {
   from {
     transform: rotate(0deg);
-  } to {
+  }
+  to {
     transform: rotate(360deg);
   }
 }
@@ -320,7 +333,7 @@
     justify-content: center;
     transform: translateX(-25px);
   }
-  
+
   .navigation {
     width: 100%;
     height: max-content;
@@ -340,13 +353,12 @@
   }
 }
 
-
 @media only screen and (max-width: 930px) {
   .App .main .driver-data .main-data .container .number {
     font-size: 1.5rem;
   }
 
-  .App .main .driver-data .main-data .container h2{
+  .App .main .driver-data .main-data .container h2 {
     font-size: 1.3rem;
   }
 
