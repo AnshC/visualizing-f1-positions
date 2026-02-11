@@ -8,3 +8,4 @@ https://f1positions.com
 All of the data, including the drivers' names, teams, race information, and datapoints are all pulled from https://openf1.org/
 
 This application is solely dependent on the OpenF1 API. Any issues with an API request will lead to an error displayed on the website.
+Recently the OpenF1 API switched to a subscription model, with only historic data up to 2023 available for free.
