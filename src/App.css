@@ -1,422 +1,422 @@
-* {
-  overscroll-behavior: none
+body {
+    overscroll-behavior: none;
 }
 
 .error {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  background-color: var(--f1-black);
-  padding: 0 10vw 0 10vw;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: var(--f1-black);
+    padding: 0 10vw 0 10vw;
 }
 
 .error span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .error span h1 {
-  font-size: 40px;
-  color: white;
-  margin-left: 10px;
+    font-size: 40px;
+    color: white;
+    margin-left: 10px;
 }
 
 .error #icon {
-  color: var(--f1-red);
-  font-size: 50px;
+    color: var(--f1-red);
+    font-size: 50px;
 }
 
 .error .reload {
-  background-color: var(--f1-red);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px 10px 5px 10px;
-  border-radius: 10px;
-  font-weight: 900;
-  margin-top: 20px;
-  transition: all 0.2s;
-  cursor: pointer;
+    background-color: var(--f1-red);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    font-weight: 900;
+    margin-top: 20px;
+    transition: all 0.2s;
+    cursor: pointer;
 }
 
 .error .reload:hover {
-  background-color: var(--f1-red-active);
+    background-color: var(--f1-red-active);
 }
 
 .error #reload-icon {
-  margin-right: 5px;
-  transform: scale(1.3);
+    margin-right: 5px;
+    transform: scale(1.3);
 }
 
 .error h1 {
-  font-family: "Formula1-Bold", sans-serif;
-  color: var(--f1-red);
+    font-family: "Formula1-Bold", sans-serif;
+    color: var(--f1-red);
 }
 
 .error h2 {
-  color: white;
+    color: white;
 }
 
 .error p {
-  margin-top: 20px;
-  font-family: "Formula1-Bold", sans-serif;
-  color: white;
+    margin-top: 20px;
+    font-family: "Formula1-Bold", sans-serif;
+    color: white;
 }
 
 .error a {
-  font-family: inherit;
-  color: var(--f1-red);
+    font-family: inherit;
+    color: var(--f1-red);
 }
 
 .error a:hover {
-  color: var(--f1-red-active);
+    color: var(--f1-red-active);
 }
 
 /* Main Styling */
 
 .App {
-  display: flex;
-  overflow-y: hidden;
-  height: 100vh;
+    display: flex;
+    overflow-y: hidden;
+    height: 100vh;
 }
 
 .App .main {
-  padding: 50px;
-  width: 75vw;
-  height: 100%;
-  background-color: var(--f1-black);
+    padding: 50px;
+    width: 75vw;
+    height: 100%;
+    background-color: var(--f1-black);
 }
 
 .navigation {
-  padding: 50px;
-  width: 25vw;
-  height: 100%;
-  background-color: var(--f1-black);
-  overflow-y: scroll;
-  overflow-x: hidden;
+    padding: 50px;
+    width: 25vw;
+    height: 100%;
+    background-color: var(--f1-black);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .navigation::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 /* Track */
 .navigation::-webkit-scrollbar-track {
-  background: var(--f1-black);
+    background: var(--f1-black);
 }
 
 /* Handle */
 .navigation::-webkit-scrollbar-thumb {
-  background: var(--f1-red);
-  border-radius: 5px;
+    background: var(--f1-red);
+    border-radius: 5px;
 }
 
 .navigation::-webkit-scrollbar-thumb:hover {
-  background: var(--f1-red-active);
+    background: var(--f1-red-active);
 }
 
 /* Handle on hover */
 
 .App .main .header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .App .main .header .right ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
+    display: flex;
+    align-items: center;
+    list-style: none;
 }
 
 .App .main .header .right ul li {
-  color: var(--f1-red);
-  text-decoration: none;
-  margin-right: 20px;
-  display: flex;
-  align-items: center;
-  border: 2px solid var(--f1-red);
-  border-radius: 100px;
-  padding: 3px 10px 3px 10px;
-  font-weight: 500;
-  cursor: pointer;
+    color: var(--f1-red);
+    text-decoration: none;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--f1-red);
+    border-radius: 100px;
+    padding: 3px 10px 3px 10px;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 .App .main .header .right .link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .App .main .header .right ul li:hover {
-  color: var(--f1-red-active);
-  border-color: var(--f1-red-active);
+    color: var(--f1-red-active);
+    border-color: var(--f1-red-active);
 }
 
 .App .main .header .right ul li .icon {
-  margin-right: 7px;
+    margin-right: 7px;
 }
 
 .App .main h1#header {
-  color: var(--f1-red);
-  font-weight: 900;
-  font-size: 3rem;
-  font-family: "Formula1-Bold";
+    color: var(--f1-red);
+    font-weight: 900;
+    font-size: 3rem;
+    font-family: "Formula1-Bold";
 }
 
 .App .main h2.race-header {
-  margin-top: 20px;
-  font-family: "Formula1-Bold";
+    margin-top: 20px;
+    font-family: "Formula1-Bold";
 }
 
 .App .main h2.race-header span {
-  font-family: inherit;
+    font-family: inherit;
 }
 
 .App .main p {
-  color: white;
+    color: white;
 }
 
 .App .main p.openf1 {
-  margin-top: 5px;
-  font-size: 10px;
+    margin-top: 5px;
+    font-size: 10px;
 }
 
 .App .main .link {
-  text-decoration: underline;
-  color: var(--f1-red);
-  text-underline-offset: 3px;
+    text-decoration: underline;
+    color: var(--f1-red);
+    text-underline-offset: 3px;
 }
 
 .App .main .link:hover {
-  color: var(--f1-red-active);
+    color: var(--f1-red-active);
 }
 
 .App .main .data {
-  height: 50vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  transform: translateX(-50px);
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-50px);
 }
 
 .App .main .driver-data {
-  margin-top: 50px;
-  width: 100%;
+    margin-top: 50px;
+    width: 100%;
 }
 
 .App .main .driver-header-container {
-  display: flex;
+    display: flex;
 }
 
 .App .main .driver-header-container .img img {
-  margin-left: 50px;
-  width: 300px;
+    margin-left: 50px;
+    width: 300px;
 }
 
 .App .main .driver-data h2.driver-header {
-  font-family: "Formula1-Bold";
-  font-size: 2.3rem;
-  text-align: right;
+    font-family: "Formula1-Bold";
+    font-size: 2.3rem;
+    text-align: right;
 }
 
 .App .main .driver-data h2 span {
-  font-family: inherit;
+    font-family: inherit;
 }
 
 .App .main .driver-data .driver-header-team {
-  font-weight: 800;
-  font-size: 1.3rem;
-  text-align: right;
+    font-weight: 800;
+    font-size: 1.3rem;
+    text-align: right;
 }
 
 .App .main .driver-data .main-data {
-  margin-top: 25px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .App .main .driver-data .main-data .container {
-  min-width: min-content;
-  width: 20%;
-  margin: 10px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    min-width: min-content;
+    width: 20%;
+    margin: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .App .main .driver-data .main-data .container .number {
-  font-size: 3rem;
+    font-size: 3rem;
 }
 
 .App .main .driver-data .main-data .container * {
-  font-family: "Formula1-Bold";
-  text-align: center;
+    font-family: "Formula1-Bold";
+    text-align: center;
 }
 
 .loading {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 .loading h1 {
-  font-family: "Formula1-Bold", sans-serif;
-  color: var(--f1-red);
-  display: flex;
-  align-items: center;
+    font-family: "Formula1-Bold", sans-serif;
+    color: var(--f1-red);
+    display: flex;
+    align-items: center;
 }
 
 .loading h1 .icon {
-  margin-right: 10px;
-  animation: LoadingRing 1s infinite;
+    margin-right: 10px;
+    animation: LoadingRing 1s infinite;
 }
 
 /* Loading Animation */
 @keyframes LoadingRing {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Responsive Styles */
 
 @media only screen and (max-height: 860px) {
-  .App .main h1.header {
-    font-size: 2rem;
-  }
-  .App .main .driver-data h2.driver-header {
-    font-size: 1.8rem;
-  }
-  .App .main .driver-data .driver-header-team {
-    font-size: 1rem;
-  }
-  .App .main .driver-data .main-data .container .number {
-    font-size: 2rem;
-  }
+    .App .main h1.header {
+        font-size: 2rem;
+    }
+    .App .main .driver-data h2.driver-header {
+        font-size: 1.8rem;
+    }
+    .App .main .driver-data .driver-header-team {
+        font-size: 1rem;
+    }
+    .App .main .driver-data .main-data .container .number {
+        font-size: 2rem;
+    }
 
-  .App .main .driver-data .main-data {
-    margin-top: 20px;
-  }
+    .App .main .driver-data .main-data {
+        margin-top: 20px;
+    }
 }
 
 @media only screen and (max-width: 1060px) {
-  .App {
-    overflow-y: visible;
-    overflow-x: hidden;
-    flex-direction: column;
-    height: max-content;
-  }
-  .App .main {
-    padding: 35px;
-    width: 100vw;
-    min-height: 100vh;
-    background-color: var(--f1-black);
-  }
+    .App {
+        overflow-y: visible;
+        overflow-x: hidden;
+        flex-direction: column;
+        height: max-content;
+    }
+    .App .main {
+        padding: 35px;
+        width: 100vw;
+        min-height: 100vh;
+        background-color: var(--f1-black);
+    }
 
-  .App .main .data {
-    width: 100vw;
-    height: 65vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateX(-25px);
-  }
+    .App .main .data {
+        width: 100vw;
+        height: 65vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-25px);
+    }
 
-  .navigation {
-    width: 100%;
-    height: max-content;
-    overflow-y: hidden;
-    background-color: var(--f1-black);
-  }
+    .navigation {
+        width: 100%;
+        height: max-content;
+        overflow-y: hidden;
+        background-color: var(--f1-black);
+    }
 
-  .navigation .drivers-list {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+    .navigation .drivers-list {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
-  .navigation .drivers-list * {
-    margin: 5px;
-  }
+    .navigation .drivers-list * {
+        margin: 5px;
+    }
 }
 
 @media only screen and (max-width: 930px) {
-  .App .main .driver-data .main-data .container .number {
-    font-size: 1.5rem;
-  }
+    .App .main .driver-data .main-data .container .number {
+        font-size: 1.5rem;
+    }
 
-  .App .main .driver-data .main-data .container h2 {
-    font-size: 1.3rem;
-  }
+    .App .main .driver-data .main-data .container h2 {
+        font-size: 1.3rem;
+    }
 
-  .App .main .driver-data .main-data {
-    margin-top: 20px;
-  }
+    .App .main .driver-data .main-data {
+        margin-top: 20px;
+    }
 
-  .App .main .driver-header-container {
-    flex-direction: column;
-    align-items: center;
-  }
+    .App .main .driver-header-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .App .main .driver-data .driver-header-team {
-    text-align: center;
-  }
+    .App .main .driver-data .driver-header-team {
+        text-align: center;
+    }
 
-  .App .main .driver-data h2.driver-header {
-    text-align: center;
-  }
+    .App .main .driver-data h2.driver-header {
+        text-align: center;
+    }
 
-  .App .main .driver-header-container .img img {
-    margin: 20px 0 0 0;
-    width: 80vw;
-  }
+    .App .main .driver-header-container .img img {
+        margin: 20px 0 0 0;
+        width: 80vw;
+    }
 
-  .App .main .header .right {
-    margin-top: 15px;
-  }
+    .App .main .header .right {
+        margin-top: 15px;
+    }
 
-  .App .main .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .App .main .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 @media only screen and (max-width: 420px) {
-  h1#header {
-    font-size: 2rem !important;
-    margin-bottom: 10px;
-  }
-  p.openf1 {
-    margin-top: 10px !important;
-  }
+    h1#header {
+        font-size: 2rem !important;
+        margin-bottom: 10px;
+    }
+    p.openf1 {
+        margin-top: 10px !important;
+    }
 }
 
 @media only screen and (max-width: 300px) {
-  h1#header {
-    font-size: 1.5rem !important;
-    margin-bottom: 10px;
-  }
+    h1#header {
+        font-size: 1.5rem !important;
+        margin-bottom: 10px;
+    }
 }
 
 @media only screen and (max-height: 1315px) {
-  .App .data {
-    height: 45vh !important;
-  }
+    .App .data {
+        height: 45vh !important;
+    }
 }
